@@ -24,7 +24,7 @@ class AttributeSetup extends EavSetup
      * it is expected by convention that the attribute properties are used exclusively
      * in their long form ('frontend_input' instead of 'input').
      *
-     * Example of 1 item: 'category' => 'category_icon' => ['frontend_input' => 'text', ...]
+     * Example of 1 item: 'catalog_product' => 'category_icon' => ['frontend_input' => 'text', ...]
      *
      */
     public array $attributeData;
@@ -51,17 +51,17 @@ class AttributeSetup extends EavSetup
         if ($this->cancelDueToNotAllowedAttributeShortForms()) {
             return;
         }
-        foreach ($this->attributeData as $type => $attributes) {
+        foreach ($this->attributeData as $entity => $attributes) {
             foreach ($attributes as $code => $data) {
-                $attributeId = $this->getAttributeId($type, $code);
+                $attributeId = $this->getAttributeId($entity, $code);
                 $attributeIsInstalled = !empty($attributeId);
     
                 if ($attributeIsInstalled) {
                     foreach ($data as $field => $value) {
-                        $this->updateAttribute($type, $attributeId, $field, $value);
+                        $this->updateAttribute($entity, $attributeId, $field, $value);
                     }
                 } else {
-                    $this->addAttribute($type, $code, $data);
+                    $this->addAttribute($entity, $code, $data);
                 }
             }
         }
@@ -76,7 +76,7 @@ class AttributeSetup extends EavSetup
             return false;
         }
         $notAllowedShortForms = array_values(PropertyMapper::EAV_PROPERTIES_LONG_TO_SHORT);
-        foreach ($this->attributeData as $type => $attributes) {
+        foreach ($this->attributeData as $entity => $attributes) {
             foreach ($attributes as $code => $data) {
                 foreach ($data as $field => $value) {
                     if (in_array($field, $notAllowedShortForms, true)) {
