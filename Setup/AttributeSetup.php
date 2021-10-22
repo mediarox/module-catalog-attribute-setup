@@ -35,10 +35,10 @@ class AttributeSetup extends EavSetup
         Context $context,
         CacheInterface $cache,
         CollectionFactory $attrGroupCollectionFactory,
-        array $attributes,
+        array $attributeData,
         bool $detectNotAllowedShortForms = null
     ) {
-        $this->attributeData = $attributes;
+        $this->attributeData = $attributeData;
         $this->detectNotAllowedShortForms = $detectNotAllowedShortForms ?: true;
         parent::__construct($setup, $context, $cache, $attrGroupCollectionFactory);
     }
