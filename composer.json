@@ -2,12 +2,12 @@
   "name": "mediarox/module-catalog-attribute-setup",
   "description": "Contains an alternative attributes setup class that includes an optimized create/update mechanism.",
   "type": "magento2-module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": [
     "MIT"
   ],
   "require": {
-    "php": "~7.4.0",
+    "php": "~7.4.0|~8.0|~8.1",
     "magento/module-eav": "^102.1",
     "magento/framework": "~103.0.2",
     "mediarox/module-eav-property-mapper": "^1.0.3"
