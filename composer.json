@@ -2,7 +2,7 @@
   "name": "mediarox/module-catalog-attribute-setup",
   "description": "Contains an alternative attributes setup class that includes an optimized create/update mechanism.",
   "type": "magento2-module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": [
     "MIT"
   ],
