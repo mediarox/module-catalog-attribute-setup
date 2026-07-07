@@ -36,7 +36,7 @@ class AttributeSetup extends EavSetup
         CacheInterface $cache,
         CollectionFactory $attrGroupCollectionFactory,
         array $attributeData,
-        bool $detectNotAllowedShortForms = null
+        ?bool $detectNotAllowedShortForms = null
     ) {
         $this->attributeData = $attributeData;
         $this->detectNotAllowedShortForms = $detectNotAllowedShortForms ?: true;
