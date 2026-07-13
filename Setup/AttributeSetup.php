@@ -15,7 +15,6 @@ use Magento\Framework\App\CacheInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Mediarox\EavPropertyMapper\Plugin\Entity\Setup\PropertyMapper;
-use Magento\Framework\Setup\ConsoleLogger;
 
 class AttributeSetup extends EavSetup
 {
@@ -55,7 +54,7 @@ class AttributeSetup extends EavSetup
             foreach ($attributes as $code => $data) {
                 $attributeId = $this->getAttributeId($entity, $code);
                 $attributeIsInstalled = !empty($attributeId);
-    
+
                 if ($attributeIsInstalled) {
                     foreach ($data as $field => $value) {
                         $this->updateAttribute($entity, $attributeId, $field, $value);
